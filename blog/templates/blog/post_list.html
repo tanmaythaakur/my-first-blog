@@ -1,22 +1,22 @@
-<html>
-    <head>
-        <title>Tanmay Thakur</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Tanmay Thakur</a></h1>
-        </div>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tanmay's Blog</title>
+</head>
+<body>
 
+    {% for post in posts %}
         <div>
-            <p>published: 30.03.2020, 04:05 PM</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
+            <h1>Author: {{ post.author }}</h1>
+            <p><strong>Published date:</strong> {{ post.published_date }}</p>
 
-        <div>
-            <p>published: 30.03.2020, 04:05 PM</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+            <p>{{ post.text | linebreaksbr }} </p>
         </div>
-    </body>
+    {% endfor %}
+
+</body>
 </html>
